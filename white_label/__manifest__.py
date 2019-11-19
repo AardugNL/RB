@@ -16,7 +16,7 @@
     sale order line and on product form""",
     'author': 'Caret IT Solutions Pvt. Ltd.',
     'website': 'http://www.caretit.com',
-    'depends': ['base','product', 'sale_management', 'stock', 'purchase'],
+    'depends': ['base','product', 'sale_management', 'stock', 'purchase', 'sale'],
     'data': [
              'views/product_view.xml',
              'views/sale_view.xml',

@@ -21,7 +21,8 @@ class SaleOrderLine(models.Model):
     def _compute_boxes(self):
         if self.product_id:
             for line in self:
-                line.box = line.product_uom_qty / line.product_id.box_square_meter
+                if line.product_id.box_square_meter > 0.0:
+                    line.box = line.product_uom_qty / line.product_id.box_square_meter
 
     @api.onchange('box')
     def _compute_quantity(self):

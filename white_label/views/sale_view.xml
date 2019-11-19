@@ -8,8 +8,10 @@
             <field name="arch" type="xml">
                 <field name="product_template_id" position="before">
                     <field name="type_show"/>
-                    <field name="box"/>
                 </field>
+                <xpath expr="//tree/field[@name='product_uom']" position="after">
+                    <field name="box"/>
+                </xpath>
             </field>
         </record>
     </data>
