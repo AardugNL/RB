@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="view_order_form_inherit_white_label" model="ir.ui.view">
+            <field name="name">view.order.form.inherit.white.label</field>
+            <field name="model">sale.order</field>
+            <field name="inherit_id" ref="sale.view_order_form"/>
+            <field name="arch" type="xml">
+                <field name="product_template_id" position="before">
+                    <field name="type_show"/>
+                    <field name="box"/>
+                </field>
+            </field>
+        </record>
+    </data>
+</odoo>
