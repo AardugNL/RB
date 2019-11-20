@@ -11,11 +11,10 @@ from odoo import models, fields, api
 class AccountMoveLine(models.Model):
     _inherit = 'account.move.line'
 
-    type_show = fields.Selection([
+    XA_type_show = fields.Selection([
         ('brand', 'Brand'),
         ('whitelabel', 'White Label'),
     ], string='Type')
-    decription = fields.Char()
 
     @api.model_create_multi
     def create(self, values):
@@ -23,7 +22,7 @@ class AccountMoveLine(models.Model):
         for record in records:
             saleLine = record.sale_line_ids
             if saleLine:
-                record.type_show = saleLine[0].type_show
+                record.XA_type_show = saleLine[0].XA_type_show
             else:
-                record.type_show = 'brand'
+                record.XA_type_show = 'brand'
         return records

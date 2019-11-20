@@ -16,11 +16,12 @@
     sale order line and on product form""",
     'author': 'Caret IT Solutions Pvt. Ltd.',
     'website': 'http://www.caretit.com',
-    'depends': ['base','product', 'sale_management', 'stock', 'purchase', 'sale'],
+    'depends': ['base','product', 'sale_management', 'purchase', 'sale', 'sale_crm'],
     'data': [
              'views/product_view.xml',
              'views/sale_view.xml',
              'views/account_move_views.xml',
+             'views/res_partner_view.xml',
             ],
     'installable': True,
     'application': True,

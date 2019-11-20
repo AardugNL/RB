@@ -9,19 +9,24 @@
 from odoo import models, fields, api
 
 class ProductTemplate(models.Model):
-	_inherit = 'product.template'
+    _inherit = 'product.template'
 
-	white_label_description = fields.Text(
+    XA_white_label_description = fields.Text(
         'White Label Description')
-	white_label_sale_price = fields.Float(
+    XA_white_label_sale_price = fields.Float(
         'White Label Sales Price')
-	box_quantity = fields.Integer()
-	box_square_meter = fields.Float()
+    XA_box_quantity = fields.Float('Box Quantity')
+    XA_box_square_meter = fields.Float('Box Square Meter')
+    XA_box_weight = fields.Float('Box Weight')
+    XA_pallet_boxes = fields.Float('Pallet Boxes')
+    XA_pallet_square_meter = fields.Float('Pallet Square Meter')
+    XA_pallet_weight = fields.Float('Pallet Weight')
 
-	@api.model
-	def create(self, values):
-		record = super(ProductTemplate, self).create(values)
-		if not record.white_label_description and record.white_label_sale_price == 0.00:
-			record.white_label_description = record.description_sale 
-			record.white_label_sale_price = record.list_price
-		return record
+
+    @api.model
+    def create(self, values):
+        record = super(ProductTemplate, self).create(values)
+        if not record.XA_white_label_description and record.XA_white_label_sale_price == 0.00:
+            record.XA_white_label_description = record.description_sale 
+            record.XA_white_label_sale_price = record.list_price
+        return record
