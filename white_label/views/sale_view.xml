@@ -9,6 +9,13 @@
             <field name="arch" type="xml">
                 <field name="product_template_id" position="before">
                     <field name="XA_type_show"/>
+                    <field name="XA_box_quantity" invisible="1"/>
+                    <field name="XA_box_square_meter" invisible="1"/>
+                    <field name="XA_box_weight" invisible="1"/>
+                    <field name="XA_pallet_boxes" invisible="1"/>
+                    <field name="XA_pallet_square_meter" invisible="1"/>
+                    <field name="XA_pallet_weight" invisible="1"/>
+                    <widget name="box_at_date_widget" width="0.1"/>
                 </field>
                 <xpath expr="//tree/field[@name='product_uom']" position="after">
                     <field name="XA_box"/>
@@ -22,6 +29,12 @@
                 </field>
             </field>
         </record>
+
+        <template id="sale_order_line_view_list_inherit_white_label" name="sale.order.line.view.list.inherit.white.label" inherit_id="web.assets_backend">
+            <xpath expr="." position="inside">
+                <script type="text/javascript" src="/white_label/static/src/js/box_at_date_widget.js"></script> 
+            </xpath>
+        </template>
 
         <record id="sale_view_inherit123_inherit_white_label" model="ir.ui.view">
             <field name="name">sale.view.inherit123.inherit.white.label</field>

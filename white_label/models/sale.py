@@ -16,6 +16,23 @@ class SaleOrderLine(models.Model):
         ('whitelabel', 'White Label'),
     ], store=True, string='Type', default='brand')
     XA_box = fields.Float('Box')
+    XA_box_quantity  = fields.Float(compute='compute_box_at_date', store=True)
+    XA_box_square_meter = fields.Float(compute='compute_box_at_date', store=True)
+    XA_box_weight = fields.Float(compute='compute_box_at_date', store=True)
+    XA_pallet_boxes = fields.Float(compute='compute_box_at_date', store=True)
+    XA_pallet_square_meter = fields.Float(compute='compute_box_at_date', store=True)
+    XA_pallet_weight = fields.Float(compute='compute_box_at_date', store=True)
+
+
+    @api.depends('product_id')
+    def compute_box_at_date(self):
+        for record in self:
+            record.XA_box_quantity = record.product_id.XA_box_quantity
+            record.XA_box_square_meter = record.product_id.XA_box_square_meter
+            record.XA_box_weight = record.product_id.XA_box_weight
+            record.XA_pallet_boxes = record.product_id.XA_pallet_boxes
+            record.XA_pallet_square_meter = record.product_id.XA_pallet_square_meter
+            record.XA_pallet_weight = record.product_id.XA_pallet_weight
 
     @api.onchange('product_uom_qty')
     def _compute_boxes(self):
