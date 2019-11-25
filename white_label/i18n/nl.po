@@ -100,3 +100,39 @@ msgstr "White Label Omschrijving"
 #: model:ir.model.fields,field_description:white_label.field_product_template__XA_white_label_sale_price
 msgid "White Label Sales Price"
 msgstr "White Label Sales Price"
+
+#. module: white_label
+#: model:ir.model.fields,field_description:white_label.field_purchase_order_line__XA_box_quantity
+#: model:ir.model.fields,field_description:white_label.field_sale_order_line__XA_box_quantity
+msgid "Xa Box Quantity"
+msgstr "Aantal per Doos"
+
+#. module: white_label
+#: model:ir.model.fields,field_description:white_label.field_purchase_order_line__XA_box_square_meter
+#: model:ir.model.fields,field_description:white_label.field_sale_order_line__XA_box_square_meter
+msgid "Xa Box Square Meter"
+msgstr "Mtrs2 per doos"
+
+#. module: white_label
+#: model:ir.model.fields,field_description:white_label.field_purchase_order_line__XA_box_weight
+#: model:ir.model.fields,field_description:white_label.field_sale_order_line__XA_box_weight
+msgid "Xa Box Weight"
+msgstr "Gewicht Doos"
+
+#. module: white_label
+#: model:ir.model.fields,field_description:white_label.field_purchase_order_line__XA_pallet_boxes
+#: model:ir.model.fields,field_description:white_label.field_sale_order_line__XA_pallet_boxes
+msgid "Xa Pallet Boxes"
+msgstr "Dozen per Pallet"
+
+#. module: white_label
+#: model:ir.model.fields,field_description:white_label.field_purchase_order_line__XA_pallet_square_meter
+#: model:ir.model.fields,field_description:white_label.field_sale_order_line__XA_pallet_square_meter
+msgid "Xa Pallet Square Meter"
+msgstr "Mtr2 per Pallet"
+
+#. module: white_label
+#: model:ir.model.fields,field_description:white_label.field_purchase_order_line__XA_pallet_weight
+#: model:ir.model.fields,field_description:white_label.field_sale_order_line__XA_pallet_weight
+msgid "Xa Pallet Weight"
+msgstr "Gewicht Pallet"
