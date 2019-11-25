@@ -16,12 +16,12 @@ class SaleOrderLine(models.Model):
         ('whitelabel', 'White Label'),
     ], store=True, string='Type', default='brand')
     XA_box = fields.Float('Box')
-    XA_box_quantity  = fields.Float(compute='compute_box_at_date', store=True)
-    XA_box_square_meter = fields.Float(compute='compute_box_at_date', store=True)
-    XA_box_weight = fields.Float(compute='compute_box_at_date', store=True)
-    XA_pallet_boxes = fields.Float(compute='compute_box_at_date', store=True)
-    XA_pallet_square_meter = fields.Float(compute='compute_box_at_date', store=True)
-    XA_pallet_weight = fields.Float(compute='compute_box_at_date', store=True)
+    XA_box_quantity  = fields.Float('Box Quantity', compute='compute_box_at_date', store=True)
+    XA_box_square_meter = fields.Float('Box Square Meter', compute='compute_box_at_date', store=True)
+    XA_box_weight = fields.Float('Box Weight', compute='compute_box_at_date', store=True)
+    XA_pallet_boxes = fields.Float('Pallet Boxes', compute='compute_box_at_date', store=True)
+    XA_pallet_square_meter = fields.Float('Pallet Square Meter', compute='compute_box_at_date', store=True)
+    XA_pallet_weight = fields.Float('Pallet Weight', compute='compute_box_at_date', store=True)
 
 
     @api.depends('product_id')
